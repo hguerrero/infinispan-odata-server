@@ -25,7 +25,6 @@ public final class JsonValueWrapperFieldBridge implements FieldBridge, Serializa
     private String json;
     private ObjectMapper mapper = new ObjectMapper();
 
-    @Override
     public void set(String name, Object value, Document document, LuceneOptions luceneOptions) {
         if (!(value instanceof JsonValueWrapper)) {
             throw new IllegalArgumentException("This FieldBridge can only be applied to a JsonValueWrapper");

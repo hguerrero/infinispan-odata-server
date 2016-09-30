@@ -164,7 +164,6 @@ public class InfinispanProducer implements ODataProducer {
         return this.caches.get(cacheName);
     }
 
-    @Override
     public EdmDataServices getMetadata() {
         if (metadata == null) {
             metadata = newEdmGenerator(namespace, typeMapping, eis).generateEdm(decorator).build();
@@ -176,7 +175,6 @@ public class InfinispanProducer implements ODataProducer {
         return new InMemoryEdmGenerator(namespace, containerName, typeMapping, eis, this.flattenEdm);
     }
 
-    @Override
     public MetadataProducer getMetadataProducer() {
         return metadataProducer;
     }
@@ -374,7 +372,6 @@ public class InfinispanProducer implements ODataProducer {
      * @param queryInfo
      * @return
      */
-    @Override
     public BaseResponse callFunction(ODataContext context, EdmFunctionImport function, Map<String, OFunctionParameter> params,
                                      QueryInfo queryInfo) {
 
@@ -465,7 +462,6 @@ public class InfinispanProducer implements ODataProducer {
         return Responses.error(new OErrorImpl("Parameter 'key' or $filter needs to be specified."));
     }
 
-    @Override
     public <TExtension extends OExtension<ODataProducer>> TExtension findExtension(Class<TExtension> clazz) {
         return null;
     }
@@ -495,7 +491,6 @@ public class InfinispanProducer implements ODataProducer {
         /**
          * preserve order of method calls inside -- it's important for building EDM successfully
          */
-        @Override
         public EdmDataServices.Builder generateEdm(EdmDecorator decorator) {
 
             List<EdmSchema.Builder> schemas = new ArrayList<EdmSchema.Builder>();
@@ -697,14 +692,13 @@ public class InfinispanProducer implements ODataProducer {
      */
     private StringBuilder standardizeJSONresponse(StringBuilder value) {
         StringBuilder sb = new StringBuilder();
-        sb.append("{ \"d\" : ");
+        sb.append("{ \"value\" : ");
         sb.append(value.toString());
         sb.append("}");
         return sb;
     }
 
 
-    @Override
     public void close() {
     }
 
@@ -713,7 +707,6 @@ public class InfinispanProducer implements ODataProducer {
     // ***********************
 
     // Not supported -- use defined OData functions
-    @Override
     public EntitiesResponse getEntities(ODataContext context, String entitySetName, final QueryInfo queryInfo) {
         // returning all entities from set/cache
         // calling like
@@ -723,13 +716,11 @@ public class InfinispanProducer implements ODataProducer {
 
 
     // Not supported -- use defined OData functions
-    @Override
     public CountResponse getEntitiesCount(ODataContext context, final String entitySetName, final QueryInfo queryInfo) {
         throw new NotImplementedException("getEntitiesCount not yet implemented. Use service operations as defined in $metadata.");
     }
 
     // Not supported -- use defined OData functions
-    @Override
     public EntityResponse getEntity(ODataContext context, String entitySetName, OEntityKey entityKey, EntityQueryInfo queryInfo) {
 //        // Is this faster than return simple get through function?
 //        // No, odata4j is not closing streams somewhere as fast as we need.
@@ -738,67 +729,56 @@ public class InfinispanProducer implements ODataProducer {
     }
 
     // Not supported -- use defined OData functions
-    @Override
     public void mergeEntity(ODataContext context, String entitySetName, OEntity entity) {
         throw new NotImplementedException("mergeEntity not yet implemented. Use service operations as defined in $metadata.");
     }
 
     // Not supported -- use defined OData functions
-    @Override
     public void updateEntity(ODataContext context, String entitySetName, OEntity entity) {
         throw new NotImplementedException("updateEntity not yet implemented. Use service operations as defined in $metadata.");
     }
 
     // Not supported -- use defined OData functions
-    @Override
     public void deleteEntity(ODataContext context, String entitySetName, OEntityKey entityKey) {
         throw new NotImplementedException("deleteEntity not yet implemented. Use service operations as defined in $metadata.");
     }
 
     // Not supported -- use defined OData functions
-    @Override
     public EntityResponse createEntity(ODataContext context, String entitySetName, final OEntity entity) {
         throw new NotImplementedException("createEntity not yet implemented. Use service operations as defined in $metadata.");
     }
 
     // Not supported -- use defined OData functions
-    @Override
     public EntityResponse createEntity(ODataContext context, String entitySetName, OEntityKey entityKey, String navProp, OEntity entity) {
         throw new NotImplementedException("createEntity (with navProp) not yet implemented. Use service operations as defined in $metadata.");
     }
 
     // Not supported -- use defined OData functions
-    @Override
     public BaseResponse getNavProperty(ODataContext context, String entitySetName, OEntityKey entityKey, String navProp, QueryInfo queryInfo) {
         throw new NotImplementedException("getNavProperty not yet implemented. Use service operations as defined in $metadata.");
     }
 
     // Not supported -- use defined OData functions
-    @Override
     public CountResponse getNavPropertyCount(ODataContext context, String entitySetName, OEntityKey entityKey, String navProp, QueryInfo queryInfo) {
         throw new NotImplementedException("getNavPropertyCount not yet implemented. Use service operations as defined in $metadata.");
     }
 
     // Not supported -- use defined OData functions
-    @Override
     public EntityIdResponse getLinks(ODataContext context, OEntityId sourceEntity, String targetNavProp) {
         throw new NotImplementedException("getLinks not yet implemented. Use service operations as defined in $metadata.");
     }
 
     // Not supported -- use defined OData functions
-    @Override
     public void createLink(ODataContext context, OEntityId sourceEntity, String targetNavProp, OEntityId targetEntity) {
         throw new NotImplementedException("createLink not yet implemented. Use service operations as defined in $metadata.");
     }
 
     // Not supported -- use defined OData functions
-    @Override
     public void updateLink(ODataContext context, OEntityId sourceEntity, String targetNavProp, OEntityKey oldTargetEntityKey, OEntityId newTargetEntity) {
         throw new NotImplementedException("updateLink not yet implemented. Use service operations as defined in $metadata.");
     }
 
     // Not supported -- use defined OData functions
-    @Override
     public void deleteLink(ODataContext context, OEntityId sourceEntity, String targetNavProp, OEntityKey targetEntityKey) {
         throw new NotImplementedException("deleteLink not yet implemented. Use service operations as defined in $metadata.");
     }

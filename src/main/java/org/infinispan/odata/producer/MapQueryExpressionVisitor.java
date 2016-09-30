@@ -107,7 +107,6 @@ public class MapQueryExpressionVisitor implements ExpressionVisitor {
         log.trace("End of the main BoolCommonExpression -- actual value of tmpQuery: " + tmpQuery);
     }
 
-    @Override
     public void visit(AndExpression expr) {
         BooleanQuery booleanQuery = new BooleanQuery();
         visit(expr.getLHS());
@@ -119,7 +118,6 @@ public class MapQueryExpressionVisitor implements ExpressionVisitor {
         log.trace("End of AND expr -- tmpQuery set to: " + tmpQuery);
     }
 
-    @Override
     public void visit(OrExpression expr) {
         BooleanQuery booleanQuery = new BooleanQuery();
         visit(expr.getLHS());
@@ -131,7 +129,6 @@ public class MapQueryExpressionVisitor implements ExpressionVisitor {
         log.trace("End of OR expr -- tmpQuery set to: " + tmpQuery);
     }
 
-    @Override
     public void visit(EqExpression expr) {
 
         EntitySimpleProperty espLhs = (EntitySimpleProperty) expr.getLHS();
@@ -147,302 +144,295 @@ public class MapQueryExpressionVisitor implements ExpressionVisitor {
         log.trace("End of EQ expr -- tmpQuery set to: " + tmpQuery);
     }
 
-    @Override
     public void beforeDescend() {
         // TODO: Customise this generated block
     }
 
-    @Override
     public void afterDescend() {
         // TODO: Customise this generated block
     }
 
-    @Override
     public void betweenDescend() {
         // TODO: Customise this generated block
     }
 
-    @Override
     public void visit(String type) {
         // TODO: Customise this generated block
     }
 
-    @Override
     public void visit(OrderByExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
     public void visit(OrderByExpression.Direction direction) {
         // TODO: Customise this generated block
     }
 
-    @Override
     public void visit(AddExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(BooleanLiteral expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(CastExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(ConcatMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(DateTimeLiteral expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(DateTimeOffsetLiteral expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(DecimalLiteral expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(DivExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(EndsWithMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(EntitySimpleProperty expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(GeExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(GtExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(GuidLiteral expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(BinaryLiteral expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(ByteLiteral expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(SByteLiteral expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(IndexOfMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(SingleLiteral expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(DoubleLiteral expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(IntegralLiteral expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(Int64Literal expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(IsofExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(LeExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(LengthMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(LtExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(ModExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(MulExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(NeExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(NegateExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(NotExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(NullLiteral expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(ParenExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(BoolParenExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(ReplaceMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(StartsWithMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(StringLiteral expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(SubExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(SubstringMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(SubstringOfMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(TimeLiteral expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(ToLowerMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(ToUpperMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(TrimMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(YearMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(MonthMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(DayMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(HourMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(MinuteMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(SecondMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(RoundMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(FloorMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(CeilingMethodCallExpression expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(AggregateAnyFunction expr) {
         // TODO: Customise this generated block
     }
 
-    @Override
+    
     public void visit(AggregateAllFunction expr) {
         // TODO: Customise this generated block
     }

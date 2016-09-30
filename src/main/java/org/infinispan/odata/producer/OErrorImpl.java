@@ -22,7 +22,6 @@ public class OErrorImpl implements OError {
      *
      * @return the error code
      */
-    @Override
     public String getCode() {
         return null;
     }
@@ -32,7 +31,6 @@ public class OErrorImpl implements OError {
      *
      * @return the error-message text
      */
-    @Override
     public String getMessage() {
         return this.message;
     }
@@ -44,7 +42,6 @@ public class OErrorImpl implements OError {
      *
      * @return the inner error
      */
-    @Override
     public String getInnerError() {
         return null;
     }
